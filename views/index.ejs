@@ -1,0 +1,43 @@
+<%- include("partials/header.ejs")%>
+    <div class="container">
+        <h2 class="title">to Do list 
+
+        </h2>
+        <div>
+            <a href="/add" class="btn">add to do</a>
+        </div>
+        <br>
+
+        <table>
+            <tr>
+                <th>Title</th>
+                <th> description</th>
+                <th>Created at </th>
+                <th>updated at </th>
+                <th>action</th>
+            </tr>
+           <% for(let i =0; i <todolist.length ; i++) {%>
+            <tr>
+                <td>
+                    <%=todolist[i].title%>
+                </td>
+                <td>
+                    <%=todolist[i].desc%>
+                </td>
+                <td>
+                    <%=moment(todolist[i].createdAt).format("MMMM DD,YYYY,HH:mm:ss")%>
+                </td>
+                <td>
+                    <%=moment(todolist[i].updatedAt).format("MMMM DD,YYYY,HH:mm:ss")%>
+                </td>
+                <td>
+                    <a href="/update?id=<%=todolist[i]._id%>" class="btn">edit</a>
+                    <a href="/delete?id=<%=todolist[i]._id%>" class="btn">delete</a>
+                </td>
+            </tr>
+            <%}%>
+        </table>
+
+    </div>
+</body>
+</html>

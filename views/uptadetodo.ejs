@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs")%>
+    <div class="container">
+        <h2 class="title"> uptade to do </h2>
+        <div>
+            <a href="/" class="btn"> back</a>
+            <form action="/update/<%=todo._id%>" method="POST">
+                <div class="uptade-todo">
+                    <div class="form-group">
+                        <label for="titre" class="text">title</label>
+                        <input type="text" name="titre" value="<%=todo.title%>" placeholder="write...">
+                    </div>
+                    <div class="form-group">
+                        <label for="titre" class="text">description</label>
+                        <input type="text" name="desc" value="<%=todo.desc%>" placeholder="write...">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn">Save</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
